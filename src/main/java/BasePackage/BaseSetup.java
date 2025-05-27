@@ -2,6 +2,7 @@ package BasePackage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -27,7 +28,7 @@ public class BaseSetup {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void readDataFromPropertyFile() throws IOException {
 		Properties prope=new Properties();
 		try {
@@ -40,6 +41,20 @@ public class BaseSetup {
 		} catch (FileNotFoundException e) {			
 			e.printStackTrace();
 		}
+	}
+	@Test
+	public void writeDataToPropertyFile() throws IOException {
+		Properties prop=new Properties();
+		FileOutputStream fileOutputStream=new FileOutputStream("C:\\Users\\Ramanjaneyulu\\eclipse-workspace\\SeleniumAndCucumber\\src\\test\\resources\\config.properties");
+		prop.setProperty("url", "https://google.com");
+		prop.setProperty("Environment", "System Test");
+		prop.setProperty("endpoint", "/product/1");
+		prop.setProperty("user", "Ram");
+		prop.setProperty("password", "pwd");
+		prop.store(fileOutputStream, "Stored valuse");
+		prop.setProperty("url","https://fake.api.com/product");
+		System.out.println(prop.getProperty("url"));
+		
 	}
 	
 }
