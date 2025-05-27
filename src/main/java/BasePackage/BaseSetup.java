@@ -49,7 +49,7 @@ public class BaseSetup {
 		prop.setProperty("url", "https://google.com");
 		prop.setProperty("Environment", "System Test");
 		prop.setProperty("endpoint", "/product/1");
-		prop.setProperty("user", "Ram");
+		prop.setProperty("user", "Raj");
 		prop.setProperty("password", "pwd");
 		prop.store(fileOutputStream, "Stored valuse");
 		prop.setProperty("url","https://fake.api.com/product");
